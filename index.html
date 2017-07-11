@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+    <head>
+      <script type="text/javascript">
+    function goToPage() {
+        var bar1 = document.getElementById('bar1').value;
+        window.location = "http://localhost:5000/" + bar1;
+		
+		var bar2 = document.getElementById('bar2').value;
+        window.location = bar1 + "/" + bar2;
+		
+    }
+	
+     </script>
+     <style>
+        #container {
+          margin: 100px;
+          text-align: center;
+          padding: 10px;
+        }
+
+     </style>
+    </head>
+    <body>
+        <!-- every row is a dictionary -->
+        <h1>Demetrie's Amp'd-up Syllables</h1>
+        <div id="container">
+			bar 1: <input type="text" id="bar1" value="test bar"/>
+			<br>
+			bar 2: <input type="text" id="bar2" value="rest bar"/>
+			<br>
+			bar 3: <input type="text" value=""/>
+			<br>
+			bar 4: <input type="text" value=""/>
+			<br>
+			<br>
+			bar 5: <input type="text" value=""/>
+			<br>
+			bar 6: <input type="text" value=""/>
+			<br>
+			bar 7: <input type="text" value=""/>
+			<br>
+			bar 8: <input type="text" value=""/>
+			<br>
+			<br>
+			bar 9: <input type="text" value=""/>
+			<br>
+			bar 10: <input type="text" value=""/>
+			<br>
+			bar 11: <input type="text" value=""/>
+			<br>
+			bar 12: <input type="text" value=""/>
+			<br>
+			<br>
+			bar 13: <input type="text" value=""/>
+			<br>
+			bar 14: <input type="text" value=""/>
+			<br>
+			bar 15: <input type="text" value=""/>
+			<br>
+			bar 16: <input type="text" value=""/>
+			<br>
+          <input type="submit" value="submit" onclick="goToPage();" />
+          <br>
+        </div>
+		<div>
+		{{ object }}
+		</div>
+		<div>
+        {% for obj in object_list %}
+        {{ obj }}
+        {% endfor %}
+		</div>
+    </body>
+</html>
