@@ -1,7 +1,9 @@
 import csv
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 def get_csv():
         csv_path = './static/syllables_d_labelled_2.csv'
@@ -90,7 +92,8 @@ def detail(word):
                                 word_last = "(" + word_last + ")"
                                 word_list[-1] = word_last
                                 word = " ".join(word_list)
-                                return render_template(template, object=word)
+                                return jsonify({'ending': word})
+
         #abort(404)             
 
 # This check allows you to run any python script as a program

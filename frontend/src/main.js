@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import {ClientTable} from 'vue-tables-2'
+import VueResource from 'vue-resource'
+
+Vue.use(VueResource)
 Vue.use(ClientTable)
 
 Vue.config.productionTip = false
@@ -13,5 +16,9 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+
+  mounted () {
+    console.log(this)
+  }
 })
